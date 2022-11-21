@@ -33,14 +33,11 @@ class Cliente {
         return $this->senha;
     }
 
-    /*public function cadastraCliente($nome, $senha) {
-        $this->nome = $nome;
-        $this->senha = $senha;
+    public function loginCliente($nome, $senha) {
+        $sql = "SELECT id_cliente, nome, senha from cliente WHERE nome = '$nome' AND senha = '$senha'";
 
-        $sql = "INSERT INTO cliente (nome, senha) VALUES 
-        ('$nome','$senha')";
         return mysqli_query($this->connection->getConnection(), $sql);
     }
-    */
+
 }
 ?>
