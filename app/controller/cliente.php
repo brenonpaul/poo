@@ -5,17 +5,19 @@ require_once ('../model/Cliente.php');
 function login() {
     $cliente = new Cliente;
     $query = $cliente->loginCliente($_POST['nome'], $_POST['senha']);
-
     
     if ($query && mysqli_num_rows($query) != 0) {
         $row = mysqli_fetch_assoc($query);
-        var_dump($row);
+     
         session_start();
         $_SESSION['idCliente'] = $row['id_cliente'];
-   
+        $_SESSION['nome'] = $row['nome'];
+        
+        header("Location: redirect.php?action=home");
+
     } else {
         session_start();
-        $_SESSION['nome'] = $_POST['1nome'];
+        $_SESSION['nome'] = $_POST['nome'];
 
         $_SESSION['categoria'] = "Erro";
         $_SESSION['mensagem'] = "Usuário ou senha incorretos";

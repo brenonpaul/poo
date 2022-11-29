@@ -17,7 +17,7 @@
             <input type="text" name="nome" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
-            <input type="password" name="senha" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="password" name="senha" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <button type="submit" class="btn btn-light">Logar</button>
     </form>
